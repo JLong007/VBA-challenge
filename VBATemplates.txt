@@ -1,0 +1,93 @@
+Subroutine for finding a result if Budget is < total with Answer "Nope" 
+
+Sub Eval()
+
+Dim Budget As Double
+Dim Total As Double
+
+
+Budget = Range("C5").Value
+Total = Range("G5").Value
+
+    If (Budget < Total) And Range("A1") = "Hello" Then
+        MsgBox ("Yes, Budget < Total")
+        
+    Else
+        MsgBox ("Nope")
+        
+    End If
+    
+End Sub
+-------------------------------------------------------
+
+For Loops (Template)
+
+Sub myForLoop()
+
+Dim i As Integer
+
+    For i = 1 To 20 ' Try varying the range...
+    
+        Cells(i, 1).Value = 1
+
+        Cells(1, i).Value = 5
+
+        Cells(i + 1, 2).Value = i + 1
+        
+    Next i
+    
+End Sub
+---------------------------------------------------
+
+Modulus Function (relates to "FizzBuzz" *popular interview test"
+
+4 Mod 2 yields 0 (the remainder of the division of 4 divided by 2)
+
+- - - - - - - - - - - - - - - - - - - 
+Sub FizzBuzz()
+
+' create a for loop from 1 to 10
+    For i = 2 To 99
+    
+        num = Cells(i, 1).Value
+        
+        ' if the number is divisible by 3 & 5 w/ R0
+        If (num Mod 3 = 0 And num Mod 5 = 0) Then
+        
+            Cells(i, 2).Value = "Fizzbuzz"
+            
+        ElseIf (num Mod 3 = 0) Then
+            
+        ' if the number is divisible by 5 only
+        ElseIf (num Mod 5 = 0) Then
+        
+            Cells(i, 2).Value = "Buzz"
+            
+        End If
+        
+   Next i
+        
+End Sub
+---------------------
+Simple 1-10 example ***there's an error somewhere***
+Sub PracticeForLoop():
+
+    
+    For i = 1 To 10
+    
+        If Cells(i, 1).Value Mod 2 = 0 Then
+        
+            Cells(2, i).Value = "Even"
+            
+    Else
+        
+        If Cells(i, 1).Value Mod 2 = 1 Then
+        
+            Cells(2, i).Value = "Odd"
+        
+    End If
+        
+    Next i
+     
+End Sub
+    
